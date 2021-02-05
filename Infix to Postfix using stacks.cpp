@@ -18,7 +18,7 @@ int prec(char x)
 void infixtopostfix(string s)
 {
     stack<char> oper;
-    oper.push('M');
+    //oper.push('M');
     for(int i=0;i<s.length();i++)
     {
         if (s[i]>='a' && s[i]<='z' || s[i]>='A' && s[i]<='Z')
@@ -32,7 +32,7 @@ void infixtopostfix(string s)
 
         else if( s[i] == ')' )
             {
-                while(oper.top()!='M' && oper.top()!='(')
+                while(!oper.empty() && oper.top()!='(')
                 {
                     cout<<oper.top();
                     oper.pop();
@@ -45,7 +45,7 @@ void infixtopostfix(string s)
             }
         else
         {
-            while (oper.top()!='M' && prec(s[i])<=prec(oper.top()))
+            while (!oper.empty() && prec(s[i])<=prec(oper.top()))
                 {
                     cout<<oper.top();
                     oper.pop();
@@ -53,7 +53,7 @@ void infixtopostfix(string s)
                 oper.push(s[i]);
         }
     }
-    while(oper.top()!='M')
+    while(!oper.empty())
         {
             cout<<oper.top();
             oper.pop();
