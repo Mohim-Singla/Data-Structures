@@ -78,7 +78,7 @@ int main()
     root=create(root, 7);
     root=create(root, 32);
 
-    cout<<"preorder Traversal: ";
+    cout<<"Postorder Traversal: ";
     postorder_traversal(root);
     return 0;
 }

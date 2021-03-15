@@ -79,7 +79,7 @@ int main()
     root=create(root, 7);
     root=create(root, 32);
 
-    cout<<"preorder Traversal: ";
+    cout<<"Inorder Traversal: ";
     inorder_traversal(root);
     return 0;
 }
