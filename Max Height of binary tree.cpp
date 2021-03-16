@@ -60,22 +60,13 @@ void search_node(node* root,int data)
     }
 }
 
-void minimum(node* root)
+int height(node* root)
 {
-    while(root->lchild!=NULL)
+    if (root==NULL)
     {
-        root=root->lchild;
+        return -1;
     }
-    cout<<root->data<<endl;
-}
-
-void maximum(node* root)
-{
-    while(root->rchild!=NULL)
-    {
-        root=root->rchild;
-    }
-    cout<<root->data<<endl;
+    return max(height(root->lchild), height(root->rchild)) + 1;
 }
 
 int main()
@@ -96,7 +87,7 @@ int main()
     root=create(root, 7);
     root=create(root, 32);
 
-    minimum(root);
-    maximum(root);
+    int heigh=height(root);
+    cout<<"Max Height: "<<heigh;
     return 0;
 }
