@@ -51,11 +51,12 @@ public:
             }
         }
     }
-    void print()
+    void print(int start)
     {
         for (auto it:min_dist)
         {
-            cout<<"Minimum distance from "<<it.first<<" to "<<it.second<<" is "<<endl;
+            cout<<"Minimum distance from "<<start<<" to "<<it.first<<" is "<<it.second<<endl;
+
         }
     }
 };
@@ -74,5 +75,14 @@ int main()
     g1.inserting(2,5,2);
     g1.inserting(4,5,4);
     g1.dijkstra(0);
-    g1.print();
+    g1.print(0);
 }
+/*
+Output:
+Minimum distance from 0 to 0 is 0
+Minimum distance from 0 to 1 is 1
+Minimum distance from 0 to 2 is 5
+Minimum distance from 0 to 3 is 3
+Minimum distance from 0 to 4 is 6
+Minimum distance from 0 to 5 is 7
+*/
